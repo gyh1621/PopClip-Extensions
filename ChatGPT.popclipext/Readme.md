@@ -3,9 +3,6 @@
 Send the selected text to [ChatGPT](https://openai.com/blog/chatgpt), and append
 the response.
 
-Download:
-[ChatGPT.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/ChatGPT.popclipextz)
-
 ## Description
 
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/ChatGPT.popclipext/ChatGPT-demo.gif" width="480px">
