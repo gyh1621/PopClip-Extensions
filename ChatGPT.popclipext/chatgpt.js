@@ -41,10 +41,10 @@ const chat = async (input, options) => {
     lastChat = new Date();
     // if holding shift, copy just the response. else, paste the last input and response.
     if (popclip.modifiers.shift) {
-        popclip.pasteText(getTranscript(1));
+        popclip.showText(getTranscript(1));
     }
     else {
-        popclip.showText(getTranscript(2));
+        popclip.pasteText(getTranscript(2));
     }
     return null;
 };
