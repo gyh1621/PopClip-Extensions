@@ -122,18 +122,22 @@ const summrize = async (input, options) => {
 exports.actions = [{
         title: "ChatGPT: Chat",
         code: chat,
+        requirements: ["option-showChat=1"],
     }, {
         title: "ChatGPT: Translate",
         code: translate,
-        icon: "T"
+        icon: "T",
+        requirements: ["option-showTranslate=1"],
     }, {
         title: "ChatGPT: Rewrite",
         code: rewrite,
-        icon: "R"
+        icon: "R",
+        requirements: ["option-showRewrite=1"],
     }, {
         title: "ChatGPT: Summrize",
         code: summrize,
-        icon: "S"
+        icon: "S",
+        requirements: ["option-showSummrize=1"],
     },
     {
         title: "ChatGPT: Reset",

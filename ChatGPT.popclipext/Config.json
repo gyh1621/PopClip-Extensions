@@ -54,6 +54,30 @@
       "type": "boolean",
       "icon": "broom-icon.svg",
       "description": "Show a button to reset the conversation."
+    },
+    {
+      "identifier": "showSummrize",
+      "label": "Show Summrize Button",
+      "type": "boolean",
+      "description": "Show a button to trigger ChatGPT: Summrize."
+    },
+    {
+      "identifier": "showTranslate",
+      "label": "Show Translate Button",
+      "type": "boolean",
+      "description": "Show a button to trigger ChatGPT: Translate."
+    },
+    {
+      "identifier": "showRewrite",
+      "label": "Show Rewrite Button",
+      "type": "boolean",
+      "description": "Show a button to trigger ChatGPT: Rewrite."
+    },
+    {
+      "identifier": "showChat",
+      "label": "Show Chat Button",
+      "type": "boolean",
+      "description": "Show a button to trigger ChatGPT: Chat."
     }
   ]
 }
