@@ -28,6 +28,13 @@
       "default value": "Translate to Chinese:"
     },
     {
+      "identifier": "summrizePrompt",
+      "label": "Summrize Prompt",
+      "type": "string",
+      "description": "Prompt for summrize action",
+      "default value": "Summarize the following text with the most unique and helpful points, into a numbered list of key points and takeaways:"
+    },
+    {
       "identifier": "rewritePrompt",
       "label": "Rewrite Prompt",
       "type": "string",

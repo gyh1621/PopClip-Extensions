@@ -62,7 +62,7 @@ const translate = async (input, options) => {
     });
     // add the response to the history
     const resp = data.choices[0].message.content.trim();
-    // if holding shift, copy just the response. else, paste the last input and response.
+
     if (popclip.modifiers.shift) {
         popclip.pasteText(resp);
     }
@@ -85,7 +85,30 @@ const rewrite = async (input, options) => {
     });
     // add the response to the history
     const resp = data.choices[0].message.content.trim();
-    // if holding shift, copy just the response. else, paste the last input and response.
+
+    if (popclip.modifiers.shift) {
+        popclip.showText(resp);
+    }
+    else {
+        popclip.pasteText(resp);
+    }
+    return null;
+}
+
+const summrize = async (input, options) => {
+    const openai = axios_1.default.create({
+        baseURL: "https://api.openai.com/v1",
+        headers: { Authorization: `Bearer ${options.apikey}` },
+    });
+    // send question to OpenAI
+    const message = `${options.summrizePrompt} ${input.text}`;
+    const { data } = await openai.post("chat/completions", {
+        model: "gpt-3.5-turbo",
+        messages: [{role: "user", content: message}]
+    });
+    // add the response to the history
+    const resp = data.choices[0].message.content.trim();
+
     if (popclip.modifiers.shift) {
         popclip.showText(resp);
     }
@@ -107,6 +130,10 @@ exports.actions = [{
         title: "ChatGPT: Rewrite",
         code: rewrite,
         icon: "R"
+    }, {
+        title: "ChatGPT: Summrize",
+        code: summrize,
+        icon: "S"
     },
     {
         title: "ChatGPT: Reset",
