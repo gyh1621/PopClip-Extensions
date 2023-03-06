@@ -42,6 +42,13 @@
       "default value": "I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more suitable for daily or work chat, not too formal. I want you to only reply the improvements and nothing else, do not write explanations, do not write what you detected. Remember: improvements only.  My first sentence is:"
     },
     {
+      "identifier": "writePrompt",
+      "label": "Write Prompt",
+      "type": "string",
+      "description": "Prompt for write action",
+      "default value": "Help me write one sentence in following background and intention, give me result only. If my provided information starts with Email, write sentence in Email format, and remove the Email prefix, if starts with Slack, write in slack style, not too formal and remove the Slack prefix, if neither, write sentence in daily style."
+    },
+    {
       "identifier:": "resetMinutes",
       "label": "Reset Timer (minutes)",
       "type": "string",
@@ -72,6 +79,12 @@
       "label": "Show Rewrite Button",
       "type": "boolean",
       "description": "Show a button to trigger ChatGPT: Rewrite."
+    },
+    {
+      "identifier": "showWrite",
+      "label": "Show Write Button",
+      "type": "boolean",
+      "description": "Show a button to trigger ChatGPT: Write."
     },
     {
       "identifier": "showChat",

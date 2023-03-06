@@ -118,6 +118,29 @@ const summrize = async (input, options) => {
     return null;
 }
 
+const write = async (input, options) => {
+    const openai = axios_1.default.create({
+        baseURL: "https://api.openai.com/v1",
+        headers: { Authorization: `Bearer ${options.apikey}` },
+    });
+    // send question to OpenAI
+    const message = `${options.writePrompt} ${input.text}`;
+    const { data } = await openai.post("chat/completions", {
+        model: "gpt-3.5-turbo",
+        messages: [{role: "user", content: message}]
+    });
+    // add the response to the history
+    const resp = data.choices[0].message.content.trim();
+
+    if (popclip.modifiers.shift) {
+        popclip.showText(resp);
+    }
+    else {
+        popclip.pasteText(resp);
+    }
+    return null;
+}
+
 // export the actions
 exports.actions = [{
         title: "ChatGPT: Chat",
@@ -138,6 +161,12 @@ exports.actions = [{
         code: summrize,
         icon: "S",
         requirements: ["option-showSummrize=1"],
+    },
+    {
+        title: "ChatGPT: Write",
+        code: write,
+        icon: "W",
+        requirements: ["option-showWrite=1"],
     },
     {
         title: "ChatGPT: Reset",
